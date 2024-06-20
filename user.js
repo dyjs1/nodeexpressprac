@@ -7,8 +7,8 @@ const { v4: uuidv4 } = require("uuid"); // user pk를 위한 uuid 모듈에서 v
 
 
 
-// ** 요구사항  **//
 
+// ** 요구사항  **//
 /*
 ## 회원가입 / 로그인 api 만들기
 
@@ -48,6 +48,8 @@ const userId = uuidv4();
 */
 
 
+
+
 // JSON 형식의 요청 본문을 파싱하기 위해 필요
 app.use(express.json());
 
@@ -79,7 +81,7 @@ app.post("/api/v1/sign-up", (req, res) => {
   };
   //users 배열에 새로운 유저 전달
   users.push(newUser);
-  res.status(200).send({ message: "OK", pk: pk, id: id });
+  res.status(201).send({ message: "OK", pk: pk, id: id });
 });
 
 app.post("/api/v1/log-in", (req, res) => {
